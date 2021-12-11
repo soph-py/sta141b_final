@@ -4,11 +4,19 @@
 ### Professor Farris
 **Contributors to this repo:** Niraj Bangari [@ndbang](https://github.com/ndbang), Marvin Pepito [@mjpepito](https://github.com/mjpepito), Sophia Tierney [@sophiatierney](https://github.com/sophiatierney)
 #
+
+# Selected categories represented by this project
+- [x] 1. Project organization, writeup readability, overall conclusions
+- [x] 3. Custom and efficient data processing scripts
+- [x] 4. Data munging: pandas filtering, joining, grouping, transforming; handle missing values, timestamps; set indices, extract custom features
+- [x] 5. Data visualization
+- [x] 7. Data storage: SQLite database
+
 # Overview
 ### Project Directory Structure
-- **/notebooks/** directory contains statistical analysis, time series forecasting, and visualizations
-- **/code/** directory contains source code for data extraction, data cleaning, and  data manipulation
-- **/data/** contains the cleaned data in csv format, ready to import into a jupyter notebook, and also contains an in-memory sqlite database
+- [**/notebooks/**](sta141b_final/notebooks) directory contains statistical analysis, time series forecasting, and visualizations
+- [**/code/**](sta141b_final/code) directory contains source code for data extraction, data cleaning, and  data manipulation
+- [**/data/**](sta141b_final/data) contains the cleaned data in csv format, ready to import into a jupyter notebook, and also contains an in-memory sqlite database
 
 All data used for this project was sourced from the COVID-19 github repository, owned by the Center for Systems Science and Engineering at Johns Hopkins University which can be found [here](https://github.com/CSSEGISandData/COVID-19).
 
