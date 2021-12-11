@@ -1,4 +1,5 @@
-# STA141B Final Project - UC Davis
+# Time Series Analysis of COVID-19 Data
+## STA141B Final Project - UC Davis
 ### Fall Quarter 2021
 ### Professor Farris
 **Contributors to this repo:** Niraj Bangari, Marvin Pepito, Sophia Tierney
@@ -6,10 +7,10 @@
 # Overview
 ### Project Directory Structure
 - **/notebooks/** directory contains statistical analysis, time series forecasting, and visualizations
-- **/code/** directory contains source code for scraping data, data extraction, data cleaning, data munging, data manipulation
-/data/ will contain the cleaned, scraped data in csv format and json format ready to import into jupyter notebook for viz, and also a sqlite db
+- **/code/** directory contains source code for data extraction, data cleaning, and  data manipulation
+- **/data/** contains the cleaned data in csv format, ready to import into a jupyter notebook, and also contains an in-memory sqlite database
 
-
+All data used for this project was sourced from the COVID-19 github repository, owned by the Center for Systems Science and Engineering at Johns Hopkins University which can be found [here](https://github.com/CSSEGISandData/COVID-19).
 The range of date observations were from '' to ''
 Note that after the date of '' is when vaccine data was introduced, even though vaccines began being administered on '', many states had about a month of delay in reporting the data 
 
