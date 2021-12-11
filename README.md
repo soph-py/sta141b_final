@@ -42,5 +42,8 @@ To access the data, you can either download the csv file, or you can query the d
 - est_booster_doses
 
 An example query to the database would be:
-```count (*) from covid```
+```SELECT COUNT(*), 
+   FROM covid,
+   GROUP BY state,
+   ORDER BY date DESC;```
 to count all rows in the sql table named *covid*.
