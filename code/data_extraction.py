@@ -10,9 +10,7 @@ urls = {
         'https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/us_data/time_series/people_vaccinated_us_timeline.csv', 
         'https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/archive/vaccine_data_us_state_timeline.csv',
         'https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/us_data/time_series/time_series_covid19_vaccine_doses_admin_US.csv'
-    ], 
-    'population': 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv'
-    }
+    ]}
 
 df_vaxed = pd.read_csv(
     urls['vaccine'][0], parse_dates = ['Date'], usecols = [0, 1, 2, 3, 9, 10, 11]
