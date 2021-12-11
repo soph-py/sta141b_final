@@ -2,7 +2,7 @@
 ## STA141B Final Project - UC Davis
 ### Fall Quarter 2021
 ### Professor Farris
-**Contributors to this repo:** Niraj Bangari, Marvin Pepito, Sophia Tierney
+**Contributors to this repo:** Niraj Bangari [@ndbang](https://github.com/ndbang), Marvin Pepito [@mjpepito](https://github.com/mjpepito), Sophia Tierney [@sophiatierney](https://github.com/sophiatierney)
 #
 # Overview
 ### Project Directory Structure
@@ -11,26 +11,28 @@
 - **/data/** contains the cleaned data in csv format, ready to import into a jupyter notebook, and also contains an in-memory sqlite database
 
 All data used for this project was sourced from the COVID-19 github repository, owned by the Center for Systems Science and Engineering at Johns Hopkins University which can be found [here](https://github.com/CSSEGISandData/COVID-19).
-The range of date observations were from '' to ''
-Note that after the date of '' is when vaccine data was introduced, even though vaccines began being administered on '', many states had about a month of delay in reporting the data 
 
-When merging the cases and deaths data with vaccine data, we filled in na values before the date vax data began being reported for most states with 0 for easier processing and computation. 
+We gathered, transformed, and merged a total of $4$ time series datasets which are updated with new data daily. First we combined $2$ vaccine data sources, [this one](https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/us_data/time_series/vaccine_data_us_timeline.csv) containing the number of vaccine doses, broken down into *1st_dose* and *2nd_dose*, with [this](https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/vaccine_data/us_data/time_series/time_series_covid19_vaccine_doses_admin_US.csv) containing the daily reports of vaccines administered in wide format. Then, we combined the [confirmed cases](https://raw.githubusercontent.com/CSSEGISandData/COVID19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv) and [cumulative deaths](https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv). After processing, cleaning, and transforming the $4$ data sources, we merged them into a pandas dataframe and saved the result to a csv file and also loaded into an in memory sqlite database using sqlalchemy & sqlite. 
 
-After '', booster shots began to be administered and reported, so from that date on, the sum of the 1st dose and 2nd dose does not total to the total administered. We attempt to estimate the number of booster shots by summing 1st doses and 2nd doses and subtracting this from the total doses administered. 
+The range of date observations were are interested in analyzing is from 01/03/21 to date, 12/09/21.
+Note that 12/17/20 is the date when vaccines began rolling out to the public in the United states, however many states did not begin reporting vaccine counts until about a month later.
 
-All data was sourced from - link JHU github repo
-Extracted, transformed, cleaned with pandas, loaded into an in memory sqlite database using sqlalchemy & pandas.
-All visualizations and modeling were done by extracting the data from the sqlite table named 'covid' 
+When merging the cases and deaths data with vaccine data, we filled in na values with $0$ for date observations before states began reporting vaccine administration, for easier processing and computation. 
 
-All code used for data extraction, transformation, and cleaning can be located in the /code/ dir
-In the /notebooks/ dir you can find code used to query the database
+On 11/19/21, booster shots began to be administered and reported. So note that from that date forward, the sum of the 1st dose and 2nd dose counts do not total to the total administered. We attempt to estimate the number of booster shots by summing 1st doses and 2nd doses and subtracting this from the total doses administered. 
 
 To access the data, you can either download the csv file, or you can query the database. The columns contained in the database table are as follows:
-- ''
-- ''
+- fips 
+- state
+- pop (based of 2019 Census Data)
+- date 
+- total_doses_state_level
+- cum_deaths
+- confirmed
+- first_dose
+- sec_dose
+- est_booster_doses
 
-fips, state, pop_2019, date total_doses_state_level, cum_deaths, confirmed, 1st_dose, 2nd_dose, est_booster_doses
-
-An example query would be :
+An example query to the database would be:
 ```count (*) from covid```
-to count all rows in the sql table
+to count all rows in the sql table named *covid*.
