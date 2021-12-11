@@ -1,4 +1,4 @@
-# Time Series Analysis of COVID-19 Data
+# Time Series Analysis of US COVID-19 Data
 ## STA141B Final Project - UC Davis
 ### Fall Quarter 2021
 ### Professor Farris
