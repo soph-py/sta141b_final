@@ -41,9 +41,13 @@ To access the data, you can either download the csv file, or you can query the d
 - sec_dose
 - est_booster_doses
 
+Say we want to extract all rows from our sql table named *covid*, and we want them sorted in descending order by date, and grouped uniquely by state.
+
 An example query to the database would be:
-```SELECT COUNT(*), 
+
+```
+SELECT COUNT(*), 
    FROM covid,
    GROUP BY state,
-   ORDER BY date DESC;```
-to count all rows in the sql table named *covid*.
+   ORDER BY date DESC; 
+```
